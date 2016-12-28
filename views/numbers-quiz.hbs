@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{pageTitle}}</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/numbers-quiz.css">
+
+</head>
+<body>
+    {{> header}}
+
+    <div class="number-quiz">
+
+    	<h2>Numbers Quiz!</h2>
+    	<p>Select language, click speaker icon to listen, and guess number</p>
+
+    	<audio id="num-audio" type="audio/mpeg"></audio>
+    	<button type="button" id="sound-button" class="btn btn-primary sound-button"
+    		data-toggle="tooltip" data-placement="left" title="Play Sound">
+    		<span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+    	</button>
+    	&nbsp;
+    	<button type="button" id="answer-button" class="btn btn-danger answer-button"
+    		data-toggle="tooltip" data-placement="right" title="Show Answer">
+    		<b>?</b>
+    	</button>
+    	<br/><br/>
+    	<input type="number" id="guess-input" name="guess"/>
+    	<p id='results-text'>Correct: 0, Wrong: 0, Streak: 0</p>
+
+    	<div id='number-entry-pad'>
+    		<div class="number-row">
+    			<button id="num-1" class="number">1</button>
+    			<button id="num-2" class="number">2</button>
+    			<button id="num-3" class="number">3</button>
+    		</div>
+
+    		<div class="number-row">
+    			<button id="num-4" class="number">4</button>
+    			<button id="num-5" class="number">5</button>
+    			<button id="num-6" class="number">6</button>
+    		</div>
+
+    		<div class="number-row">
+    			<button id="num-7" class="number">7</button>
+    			<button id="num-8" class="number">8</button>
+    			<button id="num-9" class="number">9</button>
+    		</div>
+
+    		<div class="number-row">
+    			<button id="num-rem" class="number btn-danger">
+    				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    			</button>
+    			<button id="num-0" class="number">0</button>
+    			<button id="num-ok" class="number btn-success">
+    				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+    			</button>
+    		</div>
+    	</div>
+    	<br/>
+
+    	<div class="settings">
+    		<p><b>Number of Digits</b></p>
+    		<div id="digit-buttons" class="btn-group">
+    			<button id="dig-1" class="digit btn btn-primary btn-sm">1</button>
+    			<button id="dig-2" class="digit btn btn-primary btn-sm">2</button>
+    			<button id="dig-3" class="digit btn btn-primary btn-sm active">3</button>
+    			<button id="dig-4" class="digit btn btn-primary btn-sm">4</button>
+    			<button id="dig-5" class="digit btn btn-primary btn-sm">5</button>
+    			<button id="dig-6" class="digit btn btn-primary btn-sm">6</button>
+    			<button id="dig-7" class="digit btn btn-primary btn-sm">7</button>
+    			<button id="dig-8" class="digit btn btn-primary btn-sm">8</button>
+    			<button id="dig-9" class="digit btn btn-primary btn-sm">9</button>
+    		</div>
+    		<br/><br/>
+
+    		<p><b>Toggle Number Display</b></p>
+    		<div id="label-toggle" class="btn-group">
+    	    	<button id="num-std" class="options-numDisplay btn btn-primary btn-sm active">Standard Numbers</button>
+    	    	<button id="num-cn" class="options-numDisplay btn btn-primary btn-sm">Chinese Characters</button>
+    		</div>
+    		<br/><br/>
+
+    		<b>Language </b>
+    		<select id="lang-select" class="selectpicker btn btn-primary btn-sm">
+    	        <option value="Arabic-Male">Arabic</option>
+    	        <option value="Czech-Female">Czech</option>
+    	        <option value="Chinese-Female" selected=true>Chinese (Mandarin)</option>
+    	        <option value="Danish-Female">Danish</option>
+    	        <option value="French-Female">French</option>
+    	        <option value="Deutsch-Female">German</option>
+    	        <option value="Italian-Female">Italian</option>
+    	        <option value="Japanese-Female">Japanese</option>
+    	        <option value="Korean-Female">Korean</option>
+    	        <option value="Portuguese-Female">Portuguese</option>
+    	        <option value="Russian-Female">Russian</option>
+    	        <option value="Spanish-Female">Spanish</option>
+    	        <option value="Thai-Female">Thai</option>
+    	        <option value="Vietnamese-Male">Vietnamese</option>
+    	  	</select>
+    	</div>
+    	<br/>
+        <div style="width:300px;margin:0 auto;vertical-align:top;font-family: Arial;font-size:9pt;line-height: normal">
+            <a rel="license" href="//responsivevoice.org/">
+                <img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/120x31.png" style="float:left;padding-right:2px" />
+            </a>
+            <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">
+                <a href="//responsivevoice.org/" target="_blank" title="ResponsiveVoice Text To Speech">ResponsiveVoice</a>
+            </span> used under
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" title="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License">Non-Commercial License</a>
+        </div>
+    </div>
+    {{> footer}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+    <script src="/js/numbers-quiz.js"></script>
+</body>
+</html>

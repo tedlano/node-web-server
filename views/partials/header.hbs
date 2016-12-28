@@ -7,22 +7,21 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{% url 'views.home' %}">
-                <img alt="Brand" src="{% static 'img/tl_favicon.png' %}">
+            <a class="navbar-brand" href="/">
+                <img alt="Brand" src="/img/tl_favicon.png">
             </a>
 
-            <a class="navbar-brand" href="{% url 'views.home' %}">Ted's Tools</a>
+            <a class="navbar-brand" href="/">Ted's Tools</a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar">
-                <li><a href="{% url 'caption_maker:media_list' %}">Caption Maker</a></li>
-                <li><a href="{% url 'views.numbers_quiz' %}">Numbers Quiz</a></li>
-                <!-- <li><a href="{% url 'activity_log:home' %}">Activity Log</a></li> -->
+                <li><a href="/caption-maker">Caption Maker</a></li>
+                <li><a href="/numbers-quiz">Numbers Quiz</a></li>
             </ul>
 
             <div class="nav navbar-nav navbar-right">
-                {% if not user.is_authenticated %}
+                <!--{% if not user.is_authenticated %}-->
                 <form class="navbar-form navbar-left" role="login" method="POST" action="/login">{% csrf_token %}
                     <div class="form-group login-input">
                         <input type="text" id="login-username" name="username" class="form-control" placeholder="Username">
@@ -30,10 +29,10 @@
                     </div>
                     <button type="submit" id="login-button" class="btn btn-primary navbar-sm">Login</button>
                 </form>
-                <a href="{% url 'views.registration' %}">
+                <a href="/register">
                     <button type="button" id="register-button" class="btn btn-default navbar-sm navbar-btn">Register</button>
                 </a>
-                {% else %}
+                <!-- {% else %}
                 <p class="navbar-text hidden-xs">Welcome, {{ user.first_name }}!</p>
                 <ul class="nav navbar-nav">
                     <li role="presentation" class="dropdown">
@@ -42,12 +41,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li class="disabled"><a href="#">Settings</a></li>
-                            <!--<li role="separator" class="divider"></li>-->
                             <li><a href="{% url 'views.logout_user' %}">Logout</a></li>
                         </ul>
                     </li>
                 </ul>
                 {% endif %}
+                -->
                 <span>&nbsp;</span>
             </div>
         </div><!--/.nav-collapse -->

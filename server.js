@@ -20,12 +20,7 @@ app.use( (req, res, next) => {
     next();
 });
 
-// Redirect all pages to here
-app.use( (req, res, next) => {
-    res.render('maintenance.hbs');
-    //next();
-});
-
+//Serve up static files
 app.use(express.static(__dirname + '/public'));
 
 hbs.registerHelper('getCurrentYear', () => {
@@ -37,13 +32,8 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-    res.send({
-        'name': 'Theodore',
-        'likes': [
-            'Pho',
-            'Yoga',
-            'Tea'
-        ]
+    res.render('home.hbs', {
+        pageTitle: 'Home'
     });
 });
 
@@ -51,6 +41,12 @@ app.get('/about', (req, res) => {
     res.render('base.hbs', {
         pageTitle: 'About',
         welcomeMessage: 'Welcome to my site'
+    });
+});
+
+app.get('/numbers-quiz', (req, res) => {
+    res.render('numbers-quiz.hbs', {
+        pageTitle: 'Numbers Quiz'
     });
 });
 
